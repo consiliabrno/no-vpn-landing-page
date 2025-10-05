@@ -1,9 +1,0 @@
-{
-  "private": true,
-  "engines": {
-    "node": "22.x"
-  },
-  "dependencies": {
-    "next": "latest"
-  }
-}
