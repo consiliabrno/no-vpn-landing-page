@@ -20,10 +20,18 @@ body {
     position: absolute;
     top: 2rem;
     left: 2rem;
-}
 
-.logo-container img {
-    max-height: 40px;
+    svg {
+        height: 30px;
+
+        path.c {
+            fill: #212529;
+        }
+
+        path.s {
+            fill: #d70022;
+        }
+    }
 }
 
 /* Centered Content */
