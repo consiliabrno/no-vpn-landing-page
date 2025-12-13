@@ -21,5 +21,5 @@ if ($currentHost === $redirectHost) {
     
     // Read and output the contents of your index.html file.
     // The path is relative to this PHP file's location.
-    echo file_get_contents('../landing.html');
+    echo file_get_contents(__DIR__ . '/landing.html');
 }
