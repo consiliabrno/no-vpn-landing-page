@@ -1,5 +1,4 @@
-/* Basic Reset and Global Styles */
-*, *::before, *::after {
+*, ::after, ::before {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -14,8 +13,6 @@ body {
     justify-content: center;
     align-items: center;
 }
-
-/* Logo in Top-Left Corner */
 .logo-container {
     position: absolute;
     top: 2rem;
@@ -65,6 +62,6 @@ p {
 .help-text {
     margin-top: 1rem;
     font-size: 1rem;
-    color:  #828586;
+    color: #828586;
     max-width: 400px;
 }
