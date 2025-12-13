@@ -21,5 +21,12 @@ if ($currentHost === $redirectHost) {
     
     // Read and output the contents of your index.html file.
     // The path is relative to this PHP file's location.
-    echo file_get_contents(__DIR__ . '/landing.html');
+    $content = @file_get_contents(__DIR__ . '/../landing.html');
+    if ($content === false) {
+        http_response_code(500);
+        echo 'Internal Server Error';
+        exit();
+    }
+    echo $content;
+
 }
