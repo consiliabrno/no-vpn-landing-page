@@ -65,3 +65,19 @@ p {
     color: #828586;
     max-width: 400px;
 }
+
+.button-link {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: .75rem 1.5rem;
+    background-color: #d70022;
+    color: #fff;
+    text-decoration: none;
+    border-radius: .375rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+    transition: background-color .2s ease;
+}
+.button-link:hover {
+    background-color: #a30017;
+}
