@@ -2,7 +2,7 @@
   "name": "no-vpn-landing-page",
   "version": "1.0.0",
   "scripts": {
-    "build": "cleancss -o style.min.css style.css"
+    "build": "cleancss -o public/style.min.css style.css"
   },
   "devDependencies": {
     "clean-css-cli": "^5.6.3"
