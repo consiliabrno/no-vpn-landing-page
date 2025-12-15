@@ -7,23 +7,28 @@ $allowedHostPattern = '/^(.+\.)?consilia\.cz$/i';
 // The final destination for the redirect.
 $redirectTarget = 'https://www.consilia-brno.com';
 
+/**
+ * Redirect to the target URL and exit.
+ */
+function redirect(string $target): never
+{
+    header("Location: " . $target, true, 307);
+    exit();
+}
+
 // Get the host from the request headers.
 $currentHost = $_SERVER['HTTP_HOST'];
 
 // --- Decision Logic ---
-if (preg_match($allowedHostPattern, $currentHost)) {
-    // If the host matches consilia.cz or any subdomain, serve the static landing page.
-    header("Content-Type: text/html; charset=utf-8");
-    
-    $content = @file_get_contents(__DIR__ . '/../public/landing.html');
-    if ($content === false) {
-        http_response_code(500);
-        echo 'Internal Server Error';
-        exit();
-    }
-    echo $content;
-} else {
-    // For any other host, issue a temporary redirect (307) and stop.
-    header("Location: " . $redirectTarget, true, 307);
-    exit();
+if (!preg_match($allowedHostPattern, $currentHost)) {
+    redirect($redirectTarget);
 }
+
+// Serve the static landing page.
+header("Content-Type: text/html; charset=utf-8");
+
+$content = @file_get_contents(__DIR__ . '/../public/landing.html');
+if ($content === false) {
+    redirect($redirectTarget);
+}
+echo $content;
